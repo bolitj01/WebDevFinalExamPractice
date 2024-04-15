@@ -23,5 +23,5 @@ from . import views
 urlpatterns = [
     path("", views.index, name="index"),
     path('admin/', admin.site.urls),
-    path('animals/', include('animals.urls')) # Include the animals app's URLs
+    # TODO
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

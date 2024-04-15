@@ -1,6 +1,6 @@
 # Animal serializer
 from rest_framework import serializers
-from .models import Animal
+from .models import Animal # Expects a model named Animal
 
 class AnimalSerializer(serializers.ModelSerializer):
     class Meta:
