@@ -1,9 +1,9 @@
 from django.db import models
 
-# Animal model with a name and picture
+# Animal model with a name and image URL
 class Animal(models.Model):
     name = models.CharField(max_length=100, unique=True)
-    picture = models.ImageField(upload_to='animals', blank=True)
+    image = models.URLField()
 
     def __str__(self):
         return self.name
