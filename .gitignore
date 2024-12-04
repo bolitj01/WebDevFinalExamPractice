@@ -272,3 +272,6 @@ volumes/
 
 # Docker Compose overrides
 docker-compose.override.yml
+
+# Build files
+dist/
