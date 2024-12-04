@@ -1,69 +1,29 @@
-import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
   //Any needed hooks
-  const [result, setResult] = useState("")
-  const [image, setImage] = useState(null)
-
-  useEffect(() => {
-    setTimeout(() => {
-      setResult("");
-    }, 1000)
-  }, [result]);
+  //TODO
   
   //Functions for API
   //upload
   async function upload(e){
     e.preventDefault();
 
-    const res = await fetch("/api/upload", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        name: e.target.name.value,
-        pictureURL: e.target.picture.value
-      })
-    });
-
-    if (res.status == 200){
-      const result = await res.text();
-      setResult(result);
-    }
+    //TODO
   }
 
   //search
   async function search(e){
     e.preventDefault();
 
-    const res = await fetch(`/api/search?name=${e.target.name.value}`);
-
-    if (res.status == 200){
-      const URL = await res.text();
-      setImage(URL);
-    }
-    else {
-      const result = await res.text();
-      setResult(result);
-      setImage(null);
-    }
+    //TODO
   }
 
   //clear
   async function clear(e){
 
-    const res = await fetch(`/api/clear`, {
-      method: "DELETE"
-    });
+    //TODO
 
-    if (res.status == 200){
-      const result = await res.text();
-      setResult(result);
-    }
-
-    setImage(null);
   }
 
   return (
@@ -86,10 +46,10 @@ function App() {
       </form>
 
       <p>
-        {result}
+        {/* TODO */}
       </p>
       <section>
-        <img src={image} height={200} alt="Animal Image"/>
+        <img src={/* TODO */} height={200} alt="Animal Image"/>
       </section>
       
       <button onClick={clear}>Clear Animal Database</button>
