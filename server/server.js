@@ -40,7 +40,7 @@ app.post("/api/upload", async (req, res) => {
     res.send(message);
   }
   catch (err){
-    console.log(err);
+    console.log(err.message);
     res.send(err.message);
   }
 })
