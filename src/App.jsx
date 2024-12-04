@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setResult("");
-    }, 1000)
+    }, 3000)
   }, [result]);
   
   //Functions for API
@@ -17,7 +17,7 @@ function App() {
   async function upload(e){
     e.preventDefault();
 
-    const res = await fetch("/api/upload", {
+    const res = await fetch("/animals/upload", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -38,7 +38,7 @@ function App() {
   async function search(e){
     e.preventDefault();
 
-    const res = await fetch(`/api/search?name=${e.target.name.value}`);
+    const res = await fetch(`/animals/search?name=${e.target.name.value}`);
 
     if (res.status == 200){
       const URL = await res.text();
@@ -54,7 +54,7 @@ function App() {
   //clear
   async function clear(e){
 
-    const res = await fetch(`/api/clear`, {
+    const res = await fetch(`/animals/clear`, {
       method: "DELETE"
     });
 
@@ -86,7 +86,7 @@ function App() {
       </form>
 
       <p>
-        {result}
+        <b>{result}</b>
       </p>
       <section>
         <img src={image} height={200} alt="Animal Image"/>
@@ -101,4 +101,5 @@ function App() {
 export default App;
 
 //npm run dev to start React app and Express server
+//npm run prod to build React app and start Express server
 

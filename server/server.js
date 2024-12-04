@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 });
 
 //upload route
-app.post("/api/upload", async (req, res) => {
+app.post("/animals/upload", async (req, res) => {
   try{
     const newAnimal = new Animal({name: req.body.name, pictureURL: req.body.pictureURL});
     await newAnimal.save();
@@ -46,7 +46,7 @@ app.post("/api/upload", async (req, res) => {
 })
 
 //search route
-app.get("/api/search", async (req, res) => {
+app.get("/animals/search", async (req, res) => {
   console.log(req.query.name);
   const animal = await Animal.findOne({name: req.query.name});
   if (animal){
@@ -58,7 +58,7 @@ app.get("/api/search", async (req, res) => {
 })
 
 //clear route
-app.delete("/api/clear", async (req, res) => {
+app.delete("/animals/clear", async (req, res) => {
   await Animal.deleteMany({});
   res.send("All animals deleted.")
 })
