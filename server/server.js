@@ -17,7 +17,7 @@ const animalSchema = new mongoose.Schema({
 const Animal = mongoose.model("Animal", animalSchema);
 
 const dbURL = "mongodb+srv://final-exam-practice:final-exam-practice@pfw-cs.ctovaum.mongodb.net/final-exam-practice?retryWrites=true&w=majority";
-const client = await mongoose.connect(dbURL);
+await mongoose.connect(dbURL);
 console.log("Connected to database!");
 
 app.use(cors());
