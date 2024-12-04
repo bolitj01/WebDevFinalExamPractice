@@ -5,8 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently \"npm run client\" \"npm run server\"",
+    "prod": "npm run build && npm run start",
     "client": "vite",
-    "server": "nodemon server/server.js"
+    "server": "nodemon --inspect server/server.js",
+    "build": "vite build",
+    "start": "node server/server.js"
   },
   "dependencies": {
     "concurrently": "^8.0.1",

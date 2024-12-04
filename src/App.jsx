@@ -24,7 +24,7 @@ function App() {
       },
       body: JSON.stringify({
         name: e.target.name.value,
-        picture: e.target.picture.value
+        pictureURL: e.target.picture.value
       })
     });
 
@@ -62,6 +62,8 @@ function App() {
       const result = await res.text();
       setResult(result);
     }
+
+    setImage(null);
   }
 
   return (

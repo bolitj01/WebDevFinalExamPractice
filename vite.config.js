@@ -7,10 +7,10 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: "http://localhost:3001",
+        target: "http://localhost:8080",
         changeOrigin: true,
         secure: false,
-        rewrite: path => path.replace('/api', ''),
+        // rewrite: path => path.replace('/api', ''), // If you want to remove the /api prefix
         configure: (proxy, _options) => {
           proxy.on('error', (err, _req, _res) => {
             console.log('proxy error', err);

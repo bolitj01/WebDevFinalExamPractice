@@ -1,0 +1,30 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    //Debugs the currently opened NodeJS file
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug This NodeJS File",
+      "skipFiles": ["<node_internals>/**", "node_modules/**/*.js"],
+      "program": "${file}"
+    },
+    //Attaches a debugger to a running NodeJS process
+    //Must run node with --inspect=9229 flag
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach to NodeJS Process",
+      "skipFiles": ["<node_internals>/**"],
+      "port": 9229
+    },
+
+    {
+      "name": "Launch Chrome for React Vite",
+      "request": "launch",
+      "type": "chrome",
+      "url": "http://localhost:5173",
+      "webRoot": "${fileDirname}"
+    },
+  ]
+}
