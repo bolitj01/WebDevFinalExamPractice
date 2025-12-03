@@ -69,4 +69,4 @@ app.listen(port, () => {
 });
 
 //npm run dev to start React app and Express server
-//npm run build and npm start to build React app and start Express server
+//npm run prod to build React app and start Express server
