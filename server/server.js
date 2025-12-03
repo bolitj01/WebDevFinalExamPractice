@@ -6,6 +6,10 @@ import url from 'url';
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const buildFolder = "../dist";
+const buildPath = path.join(__dirname, buildFolder);
+const indexPath = path.join(buildPath, "index.html");
+
+const dbURL = "mongodb+srv://final-exam-practice:final-exam-practice@pfw-cs.ctovaum.mongodb.net/final-exam-practice?retryWrites=true&w=majority";
 
 const app = express();
 
@@ -16,7 +20,6 @@ const animalSchema = new mongoose.Schema({
 
 const Animal = mongoose.model("Animal", animalSchema);
 
-const dbURL = "mongodb+srv://final-exam-practice:final-exam-practice@pfw-cs.ctovaum.mongodb.net/final-exam-practice?retryWrites=true&w=majority";
 await mongoose.connect(dbURL);
 console.log("Connected to database!");
 
@@ -24,10 +27,10 @@ app.use(cors());
 app.use(express.json());
 
 //server static React build files
-app.use(express.static(path.join(__dirname, buildFolder)));
+app.use(express.static(buildPath));
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, buildFolder, "index.html"));
+  res.sendFile(indexPath);
 });
 
 //upload route
