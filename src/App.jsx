@@ -72,27 +72,39 @@ function App() {
       <h3>Add Animal</h3>
       <form onSubmit={upload}>
         <label htmlFor="name">Animal:</label>
-        <input type="text" name="name" id="name" placeholder='Name'/>
+        <input type="text" name="name" id="name" placeholder='Name'
+        data-testid="animal"
+        />
         <label htmlFor="picture">Picture Address:</label>
-        <input type="text" name="picture" id="picture"/>
-        <button type='submit'>Upload</button>
+        <input type="text" name="picture" id="picture"
+        data-testid="url"
+        />
+        <button type='submit'
+        data-testid="upload"
+        >Upload</button>
       </form>
 
       <h3>Search Animal</h3>
       <form onSubmit={search}>
         <label htmlFor="name">Name:</label>
-        <input type="text" name="name" id="name"/>
-        <button type='submit'>Search</button>
+        <input type="text" name="name" id="name"
+        data-testid="query"
+        />
+        <button type='submit'
+        data-testid="search"
+        >Search</button>
       </form>
 
       <p>
-        <b>{result}</b>
+        <b data-testid="result">{result}</b>
       </p>
       <section>
-        <img src={image} height={200} alt="Animal Image"/>
+        <img src={image} height={200} alt="Animal Image"
+        data-testid="image"
+        />
       </section>
       
-      <button onClick={clear}>Clear Animal Database</button>
+      <button onClick={clear} data-testid="clear">Clear Animal Database</button>
 
     </div>
   )

@@ -10,7 +10,7 @@ export default defineConfig({
         target: "http://localhost:8080",
         changeOrigin: true,
         secure: false,
-        // rewrite: path => path.replace('/animals', ''), // If you want to remove the /api prefix
+        // rewrite: path => path.replace('/animals', ''), // If you want to remove the /animals prefix
         configure: (proxy, _options) => {
           proxy.on('error', (err, _req, _res) => {
             console.log('proxy error', err);

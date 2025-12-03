@@ -65,7 +65,7 @@ app.delete("/animals/clear", async (req, res) => {
 
 const port = 8080;
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+  console.log(`Server running at http://localhost:${port}`);
 });
 
 //npm run dev to start React app and Express server
