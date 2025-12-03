@@ -9,7 +9,8 @@
     "client": "vite",
     "server": "nodemon --inspect server/server.js",
     "build": "vite build",
-    "start": "node server/server.js"
+    "start": "node server/server.js",
+    "test": "concurrently \"npm run prod\" \"cypress run\""
   },
   "dependencies": {
     "concurrently": "^8.0.1",
